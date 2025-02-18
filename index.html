@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Appointment Automation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1 class="logo-text">BookWise<span class="ai-text">.ai</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features" data-lang-key="nav.features">Features</a></li>
+                <li><a href="#demo" data-lang-key="nav.demo">Demo</a></li>
+                <li><a href="#how-it-works" data-lang-key="nav.howItWorks">How It Works</a></li>
+                <li><a href="#pricing" data-lang-key="nav.pricing">Pricing</a></li>
+                <li><a href="testimonials.html" data-lang-key="nav.testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="cta-button" data-lang-key="nav.contact">Contact Us</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn" onclick="toggleLanguage()">
+                    <span>EN</span>
+                    <span>RO</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 data-lang-key="hero.title">Seamless WhatsApp Booking. Smart Scheduling. Effortless Management.</h1>
+                <p class="subheadline" data-lang-key="hero.subtitle">Automate appointment scheduling directly through WhatsApp and sync effortlessly with Google Calendar.</p>
+                <div class="hero-buttons">
+                    <button class="cta-primary" data-lang-key="hero.cta.primary">Get Started</button>
+                    <button class="cta-secondary" data-lang-key="hero.cta.secondary">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="hero-demo">
+                <div class="whatsapp-simulator">
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <div class="business-profile">
+                                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=400" alt="Barber Shop" class="business-avatar">
+                                <span data-lang-key="demo.barberName">Mircea Frizer</span>
+                            </div>
+                        </div>
+                        <div class="chat-messages" id="chat-messages">
+                            <!-- Initial message will be added by JavaScript -->
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="user-input" data-lang-key="chat.inputPlaceholder" placeholder="Type a message..." 
+                                   onkeypress="if(event.key === 'Enter') sendMessage()">
+                            <button onclick="sendMessage()">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-disclaimer">
+                    <p data-lang-key="demo.disclaimer" class="disclaimer-text">⚠️ DISCLAIMER: This is just a simple demo. The complete version uses AI and has much more advanced capabilities!</p>
+                </div>
+            </div>
+
+            <div class="hero-features">
+                <h3 data-lang-key="demo.title">Complete Version Features</h3>
+                <div class="features-list">
+                    <p data-lang-key="demo.subtitle">The complete version includes:</p>
+                    <ul>
+                        <li data-lang-key="demo.features.0">✓ Real Google Calendar Integration</li>
+                        <li data-lang-key="demo.features.1">✓ Real-time Availability Check</li>
+                        <li data-lang-key="demo.features.2">✓ Advanced User Intent Detection</li>
+                        <li data-lang-key="demo.features.3">✓ Multiple Appointment Management</li>
+                        <li data-lang-key="demo.features.4">✓ Cancellation and Rescheduling</li>
+                        <li data-lang-key="demo.features.5">✓ Automatic Reminders</li>
+                        <li data-lang-key="demo.features.6">✓ Complete Message Customization</li>
+                        <li data-lang-key="demo.features.7">✓ Integration with Your Booking System</li>
+                        <li data-lang-key="demo.features.8">✓ Multi-language Support</li>
+                        <li data-lang-key="demo.features.9">✓ Reports and Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-container">
+            <h2 data-lang-key="features.title">Powerful Features for Your Business</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 data-lang-key="features.cards.whatsapp.title">WhatsApp Integration</h3>
+                    <ul>
+                        <li data-lang-key="features.cards.whatsapp.items.0">Direct appointment booking</li>
+                        <li data-lang-key="features.cards.whatsapp.items.1">Auto-replies and confirmations</li>
+                        <li data-lang-key="features.cards.whatsapp.items.2">Intelligent chatbot assistance</li>
+                    </ul>
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 data-lang-key="features.cards.calendar.title">Google Calendar Sync</h3>
+                    <ul>
+                        <li data-lang-key="features.cards.calendar.items.0">Automatic booking sync</li>
+                        <li data-lang-key="features.cards.calendar.items.1">Conflict detection</li>
+                        <li data-lang-key="features.cards.calendar.items.2">Smart rescheduling</li>
+                    </ul>
+                    <i class="far fa-calendar-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="section-container">
+            <h2 data-lang-key="howItWorks.title">How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 data-lang-key="howItWorks.steps.0.title">1. Start a Chat</h3>
+                    <p data-lang-key="howItWorks.steps.0.description">Send a message to our WhatsApp business number to begin the booking process.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="far fa-calendar-check"></i>
+                    </div>
+                    <h3 data-lang-key="howItWorks.steps.1.title">2. Choose Your Time</h3>
+                    <p data-lang-key="howItWorks.steps.1.description">Our AI assistant will help you find and select the perfect time slot that works for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 data-lang-key="howItWorks.steps.2.title">3. Instant Confirmation</h3>
+                    <p data-lang-key="howItWorks.steps.2.description">Receive immediate confirmation and get your appointment added to our system.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 data-lang-key="howItWorks.steps.3.title">4. Get Reminders</h3>
+                    <p data-lang-key="howItWorks.steps.3.description">Receive automatic reminders before your appointment via WhatsApp.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 data-lang-key="howItWorks.steps.4.title">5. Easy Management</h3>
+                    <p data-lang-key="howItWorks.steps.4.description">Cancel or reschedule your appointment with just a few messages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="section-container">
+            <h2 data-lang-key="pricing.title">Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-lang-key="pricing.cards.0.title">Starter</h3>
+                        <div class="price">
+                            <span class="amount" data-lang-key="pricing.cards.0.price">$29</span>
+                            <span class="period" data-lang-key="pricing.cards.0.period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-lang-key="pricing.cards.0.features.0"><i class="fas fa-check"></i> Up to 100 appointments/month</li>
+                        <li data-lang-key="pricing.cards.0.features.1"><i class="fas fa-check"></i> WhatsApp integration</li>
+                        <li data-lang-key="pricing.cards.0.features.2"><i class="fas fa-check"></i> Basic analytics</li>
+                        <li data-lang-key="pricing.cards.0.features.3"><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <button class="pricing-cta" data-lang-key="pricing.cards.0.cta">Get Started</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3 data-lang-key="pricing.cards.1.title">Professional</h3>
+                        <div class="price">
+                            <span class="amount" data-lang-key="pricing.cards.1.price">$49</span>
+                            <span class="period" data-lang-key="pricing.cards.1.period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-lang-key="pricing.cards.1.features.0"><i class="fas fa-check"></i> Unlimited appointments</li>
+                        <li data-lang-key="pricing.cards.1.features.1"><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li data-lang-key="pricing.cards.1.features.2"><i class="fas fa-check"></i> Multiple staff accounts</li>
+                        <li data-lang-key="pricing.cards.1.features.3"><i class="fas fa-check"></i> Priority support</li>
+                        <li data-lang-key="pricing.cards.1.features.4"><i class="fas fa-check"></i> Custom notifications</li>
+                    </ul>
+                    <button class="pricing-cta" data-lang-key="pricing.cards.1.cta">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-lang-key="pricing.cards.2.title">Enterprise</h3>
+                        <div class="price">
+                            <span class="amount" data-lang-key="pricing.cards.2.price">~$99+</span>
+                            <span class="period" data-lang-key="pricing.cards.2.period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-lang-key="pricing.cards.2.features.0"><i class="fas fa-check"></i> All Professional features</li>
+                        <li data-lang-key="pricing.cards.2.features.1"><i class="fas fa-check"></i> Custom integrations</li>
+                        <li data-lang-key="pricing.cards.2.features.2"><i class="fas fa-check"></i> Dedicated account manager</li>
+                        <li data-lang-key="pricing.cards.2.features.3"><i class="fas fa-check"></i> 24/7 phone support</li>
+                    </ul>
+                    <button class="pricing-cta" data-lang-key="pricing.cards.2.cta">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-content">
+                <!-- Brand și descriere -->
+                <div class="footer-brand">
+                    <h3>BookWise.ai</h3>
+                    <p data-lang-key="footer.company">Smart scheduling for modern businesses</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-links">
+                    <div class="links-group">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#demo">Demo</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#privacy">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div class="contact-grid">
+                        <a href="mailto:a.arhurpopa@gmail.com" class="contact-link email">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                        <a href="tel:0727603403" class="contact-link phone">
+                            <i class="fas fa-phone"></i>
+                            <span>Phone</span>
+                        </a>
+                        <a href="https://wa.me/40727603403" class="contact-link whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="https://instagram.com/arthur_popa" class="contact-link instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/arthur-popa-591439331/" class="contact-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-lang-key="footer.copyright">© 2024 BookWise.ai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="demo-bot.js"></script>
+</body>
+</html>
