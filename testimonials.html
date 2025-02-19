@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - Coming Soon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .coming-soon {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coming-soon h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .coming-soon p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .back-button {
+            background: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .back-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .horn {
+            position: absolute;
+            font-size: 15rem;
+            color: var(--primary-color);
+            opacity: 0.1;
+            filter: blur(8px);
+            transform: translateY(-50%);
+            top: 50%;
+        }
+
+        .horn-left {
+            left: 5%;
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .horn-right {
+            right: 5%;
+            transform: translateY(-50%) rotate(-90deg);
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="coming-soon">
+        <i class="fas fa-bullhorn horn horn-left"></i>
+        <i class="fas fa-bullhorn horn horn-right"></i>
+        <h1>Testimonials Coming Soon</h1>
+        <p>We're currently gathering feedback from our amazing customers.<br>Check back soon to read their stories!</p>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html> 
